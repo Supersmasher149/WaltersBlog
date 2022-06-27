@@ -36,7 +36,6 @@ export default async function handler(
 
     // If Title already exists, return error
     const findResult = await collection.find({ Title }).toArray();
-    console.log(findResult);
     if (findResult.length > 0) {
       res.status(400).json({
         error: "Title already exists",
