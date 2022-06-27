@@ -1,10 +1,11 @@
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
-
+import LoginBtn from "./login-btn"
 const Header = () => {
   return (
     <header className={styles.main}>
       <h1>Header</h1>
+      <LoginBtn />
       <ul>
         <li>
           <Link href="/">
