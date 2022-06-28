@@ -15,7 +15,8 @@ export default async function handler(
     res.json(result);
   } else if (req.method === "POST") {
     // Checks if the request body is empty
-    const { Title, Content } = req.body;
+    const Title = req.body.Title.toString();
+    const Content = req.body.Content.toString();
     if (!Title || !Content) {
       res.status(400).json({
         error: "Title and Content are required",

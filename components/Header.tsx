@@ -1,11 +1,15 @@
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import LoginBtn from "./login-btn"
+import { useSession } from "next-auth/react";
+
 const Header = () => {
+  const {data: session} = useSession();
   return (
     <header className={styles.main}>
       <h1>Header</h1>
       <LoginBtn />
+      <div>{session?.user?.name}</div> 
       <ul>
         <li>
           <Link href="/">
