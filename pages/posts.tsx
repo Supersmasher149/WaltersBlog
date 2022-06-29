@@ -30,7 +30,7 @@ const Posts: NextPage<Props> = ({ posts }: Props) => {
 export default Posts;
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:3000/api/posts");
+  const res = await fetch(process.env.VERCEL_URL + "/api/posts");
   const data = await res.json();
   return {
     props: {
