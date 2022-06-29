@@ -1,8 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { MongoClient } from "mongodb";
 
-const uri = process.env.MONGODB_URI
-const client = new MongoClient(uri || "mongodb://localhost:27017");
+const client = new MongoClient(
+  "mongodb+srv://walter:RJe3GtfJ8HBEewY7@cluster0.stpe9.mongodb.net/blog?retryWrites=true&w=majority"
+);
 
 export default async function handler(
   req: NextApiRequest,
