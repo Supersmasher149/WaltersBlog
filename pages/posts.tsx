@@ -32,6 +32,7 @@ export default Posts;
 export const getServerSideProps = async () => {
   const res = await fetch(process.env.VERCEL_URL + "/api/posts");
   const data = await res.json();
+  console.log(process.env.VERCEL_URL);
   return {
     props: {
       posts: data,
