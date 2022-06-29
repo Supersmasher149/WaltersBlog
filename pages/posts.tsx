@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { useEffect, useState } from "react";
 import styles from "../styles/Posts.module.css";
 
 interface postTypes {
@@ -11,7 +10,7 @@ type Props = {
 };
 
 
-const Posts: NextPage<Props> = ({ posts }) => { 
+const Posts: NextPage<Props> = ({ posts }: Props) => { 
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>Posts</h1>
@@ -30,7 +29,7 @@ const Posts: NextPage<Props> = ({ posts }) => {
 
 export default Posts;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch("http://localhost:3000/api/posts");
   const data = await res.json();
   return {
