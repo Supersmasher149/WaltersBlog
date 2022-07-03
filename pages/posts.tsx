@@ -12,13 +12,13 @@ type Props = {
 
 const Posts: NextPage<Props> = ({ posts }: Props) => { 
   return (
-    <div className={styles.main}>
-      <h1 className={styles.title}>Posts</h1>
-      <div className={styles.posts}>
+    <div className={"flex flex-col items-center m-5 p-2"}>
+      <h1 className={"text-3xl font-semibold my-8"}>Posts</h1>
+      <div className={"flex flex-col"}>
         {posts.map((post: postTypes) => (
-          <div className={styles.post} key={post.Title}>
-            <h2 className={styles.postTitle}>{post.Title}</h2>
-            <p className={styles.postContent}>{post.Content}</p>
+          <div className={"py-5 border-t items-center"} key={post.Title}>
+            <h2 className={"text-xl font-semibold"}>{post.Title}</h2>
+            <p>{post.Content}</p>
           </div>
         ))}
         
