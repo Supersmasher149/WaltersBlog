@@ -1,41 +1,37 @@
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
 import LoginBtn from "./login-btn";
 import { useSession } from "next-auth/react";
 
 const Header = () => {
   const { data: session } = useSession();
   return (
-      <header className={styles.main}>
-        <div>
-          <h1>Header</h1>
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/posts">
-                <a>Posts</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/createPost">
-                <a>Create Post</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.Login}>
-        <LoginBtn />
-        </div>
-      </header>
+    <header>
+      <div>
+        <ul className={"list-none m-0 p-0"}>
+          <li className={"inline-block p-2"}>
+            <Link href="/">
+              <a className={"subpixel-antialiased font-medium text-slate-700"}>
+                Home
+              </a>
+            </Link>
+          </li>
+          <li className={"inline-block p-2"}>
+            <Link href="/about">
+              <a className={"subpixel-antialiased font-medium text-slate-700"}>
+                About
+              </a>
+            </Link>
+          </li>
+          <li className={"inline-block p-2"}>
+            <Link href="/posts">
+              <a className={"subpixel-antialiased font-medium text-slate-700"}>
+                Posts
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </header>
   );
 };
 
