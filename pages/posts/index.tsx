@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
-import styles from "../styles/Posts.module.css";
 
-interface postTypes {
+export interface postTypes {
   Title: string;
   Content: string;
 }
