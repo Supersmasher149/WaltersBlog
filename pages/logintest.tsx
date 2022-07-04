@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, FormikErrors, FormikValues } from "formik";
 
 const LoginTest = () => {
   return (
@@ -10,7 +10,7 @@ const LoginTest = () => {
           password: "",
         }}
         validate={(values) => {
-          const errors: any = {};
+          const errors: FormikErrors<FormikValues> = {};
           if (!values.email) {
             errors.email = "Required";
           }
