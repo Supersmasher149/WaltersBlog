@@ -29,7 +29,8 @@ const Posts: NextPage<Props> = ({ posts }: Props) => {
 export default Posts;
 
 export const getServerSideProps = async () => {
-  const res = await fetch("https://walters-blog.vercel.app/api/posts", {
+  const url = `${process.env.NEXTAUTH_URL}/api/posts/`
+  const res = await fetch(url, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
