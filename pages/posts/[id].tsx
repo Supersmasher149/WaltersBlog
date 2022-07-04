@@ -1,7 +1,7 @@
 import type { postTypes } from "./index";
 import type { NextPage } from "next";
 
-const Post: NextPage<postTypes> = ({ post }) => {
+const Post: NextPage<postTypes> = ({ post }: any) => {
   return (
     <div className={"flex flex-col items-center m-5 p-2"}>
       <h1 className={"text-3xl font-semibold my-8"}>{post.Title}</h1>
@@ -14,7 +14,7 @@ const Post: NextPage<postTypes> = ({ post }) => {
 
 export default Post;
 
-export const getServerSideProps = async ({ query }) => {
+export const getServerSideProps = async ({ query }: any) => {
   const url = `${process.env.NEXTAUTH_URL}/api/posts/${query.id}`
   const res = await fetch(
     url,
