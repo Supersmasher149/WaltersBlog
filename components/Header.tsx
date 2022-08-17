@@ -29,6 +29,13 @@ const Header = () => {
               </a>
             </Link>
           </li>
+          <li className={"inline-block p-2"}>
+            <Link href="/createPost">
+              <a className={"subpixel-antialiased font-medium text-slate-700"}>
+                Create Post
+              </a>
+            </Link>
+          </li>
         </ul>
       </div>
     </header>
